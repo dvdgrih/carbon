@@ -14,6 +14,7 @@
   "main": "./dist/index.js",
   "typings": "./dist/@types/index",
   "scripts": {
+    "build": "tsc -b",
     "start": "./node_modules/.bin/start-storybook -c stories/.storybook"
   },
   "dependencies": {

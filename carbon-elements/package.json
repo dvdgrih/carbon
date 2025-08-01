@@ -27,6 +27,7 @@
     "@types/luxon": "^3.7.1"
   },
   "scripts": {
+    "build": "tsc -b",
     "test": "vitest"
   }
 }

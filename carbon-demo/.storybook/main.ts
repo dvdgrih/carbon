@@ -8,13 +8,14 @@ const config: StorybookConfig = {
     options: {}
   },
   webpackFinal: async (config, { configType }) => {
+    const streamBrowserify = (await import('stream-browserify')).default ?? require.resolve('stream-browserify');
     return {
       ...config,
       resolve: {
         ...config.resolve,
         fallback: {
           ...config.resolve.fallback,
-          stream: require.resolve('stream-browserify')
+          stream: streamBrowserify//(await import('stream-browserify')).default ?? 'stream-browserify'//require.resolve('stream-browserify')
         },
         alias: {
           ...config.resolve.alias
